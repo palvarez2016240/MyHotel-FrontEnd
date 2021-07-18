@@ -1,0 +1,47 @@
+<app-navbar-admin></app-navbar-admin>
+<h2>Clientes</h2>
+<div class="g container">
+    <div class="col-0 col-md-0">
+      <table class="t table">
+        <tbody>
+          <br>
+          <tr *ngFor="let usua of usuarioList">
+            <td class="letra">
+              <img src="/assets/img/Usuario.png" class="usuario">
+              <br>
+              Nombre: {{ usua.nombre }}<br> Correo: {{ usua.correo }}
+              <br> Telefono: {{ usua.telefono }}
+
+              <br>
+              <button type="submit" class="bton btn btn-primary" (click)="editarRol(usua._id)">Editar Rol</button>
+            </td>
+            <td>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+<h2 class="d">Administradores de Hoteles</h2>
+
+<div class="g container">
+  <div class="col-0 col-md-0">
+    <table class="t table">
+      <tbody>
+        <br>
+        <tr *ngFor="let usua of usuarioListA">
+          <td class="letra">
+            <img src="/assets/img/Usuario.png" class="usuario">
+            <br>
+            Nombre: {{ usua.nombre }}<br> Correo: {{ usua.correo }}
+            <br> Telefono: {{ usua.telefono }}
+          </td>
+          <td>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<app-navbar-admin></app-navbar-admin>
+
+<form class="formulario">
+  <h2>Agregar un hotel</h2>
+  <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre</label>
+    <input type="text" class="form-control" id="nombre"
+      name="nombre" #nombre = 'ngModel' [(ngModel)] = 'hotelModel.nombre'
+    >
+  </div>
+  <div class="mb-3">
+    <label for="direccion" class="form-label">Direccion</label>
+    <input type="text" class="form-control" id="direccion" aria-describedby="emailHelp"
+      name="direccion" #correo = 'ngModel' [(ngModel)] = 'hotelModel.direccion'
+    >
+  </div>
+  <div class="mb-3">
+    <label for="calificacion" class="form-label">Calificacion</label>
+    <input type="calificaion" class="form-control" id="calificaion"
+      name="calificacion" #password = 'ngModel' [(ngModel)] = 'hotelModel.calificacion'
+    >
+  </div>
+  <div class="mb-3">
+    <label for="descripcion" class="form-label">Descripcion del hotel</label>
+    <input type="text" class="form-control" id="descripcion"
+      name="descripcion" #telefono = 'ngModel' [(ngModel)] = 'hotelModel.descripcion'
+    >
+  </div>
+  <div class="mb-3">
+    <label for="administrador" class="form-label">Correo del Administrador</label>
+    <input type="text" class="form-control" id="administrador"
+      name="administrador" #telefono = 'ngModel' [(ngModel)] = 'hotelModel.administrador'
+    >
+  </div>
+  <button type="submit" class="bton btn btn-primary" (click) = 'agregar()'>Agregar Hotel</button>
+</form>
+
+<div class="g container">
+    <div class="col-0 col-md-0">
+      <table class="t table">
+        <tbody>
+          <h2 class="encabezado">Hoteles</h2>
+          <br>
+          <tr *ngFor="let hotl of hotlList">
+            <td class="letra">
+              Nombre: {{ hotl.nombre }}<br> Direccion: {{ hotl.direccion }}
+              <br> Calificaion: {{ hotl.calificacion }}/5<br> Descripcion: {{ hotl.descripcion }}
+              <br> Solicitudes: {{ hotl.solicitudes }}
+              <br>
+              <button type="submit" class="bton3 btn btn-primary" (click)='eleminarHotel(hotl._id)'>Eliminar</button>
+            </td>
+            <td>
+              <img src="/assets/img/hotel.jpg" class="hotel">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

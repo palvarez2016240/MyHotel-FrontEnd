@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="ji row">
+    <h2>My Reservacion</h2>
+    <div class="col">
+      <table class="t table">
+        <tbody>
+          <br>
+          <tr *ngFor="let hotl of reservacionList">
+            <td class="letra">
+              Cliente: {{ hotl.cliente }}<br> <br> Hotel: {{ hotl.hotel }}
+              <br> Habitacion: {{ hotl.habitacion }}<br><br> CHECK-IN: {{ hotl.fechaLlegada }}
+              <br> CHECK-OUT: {{ hotl.fechaSalida }}<br> <br> Servicios: {{hotl.servicios}}
+              <br>
+              <button type="submit" class="bton btn btn-primary" (click)='cancelarReservacion(hotl._id)'>CANCELAR RESERVACION</button><br>
+              <button type="submit" class="bton2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalServicio" (click)='reservacionId(hotl._id)'
+              >AGREGAR SERVICIOS</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalServicio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar otro Servicio</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="inputservicio" class="form-label">Nombre del Servicio</label>
+            <input type="text" class="form-control" id="inputservicio" name="nombre" #nombre="ngModel"
+            [(ngModel)]="modelRes.nombre">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" (click)='agregarServicio(idReservacionModel._id)'>Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>

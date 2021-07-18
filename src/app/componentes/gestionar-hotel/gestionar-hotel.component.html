@@ -1,0 +1,153 @@
+<app-navbar-hotel></app-navbar-hotel>
+
+<div class="container">
+  <div class="barraSuperior">
+  <button type="submit" class="bton7 btn btn-primary" (click)='navegarReservaciones()' >Reservaciones Hechas</button>
+  <button type="submit" class="bton7 btn btn-primary" (click)='navegarFacturas()' >Facturas Hechas</button>
+</div>
+  <h1 class="subt">Habitaciones</h1>
+  <div class="row">
+    <div class="col">
+      <table class="t table">
+        <tbody>
+          <br>
+          <tr *ngFor='let hab of habList'>
+            <td class="letra">
+              Nombre: {{ hab.nombre }} <br> Descripcion: {{ hab.descripcion }}
+              <br> Precio: {{ hab.precio }} <br> Fecha Disponible: {{ hab.fechaDisponible }}
+              <br> Habitacion Disponible: {{ hab.disponible }}<br> Solicitudes: {{hab.reservaciones}}
+              <br>
+              <button type="submit" class="bton btn btn-primary">Editar</button>
+              <button type="submit" class="bton2 btn btn-primary">Eliminar</button>
+            </td>
+            <td>
+              <img src="/assets/img/habitacion.jpg" class="hotel">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <form class="formulario">
+        <h2>Agregar una habitacion</h2>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre de la habitacion</label>
+          <input type="text" class="form-control" id="nombre"
+            name="nombre" #nombre = 'ngModel' [(ngModel)] = "habitacionalModel.nombre"
+          >
+        </div>
+        <div class="mb-3">
+          <label for="precio" class="form-label">Precio de la habitacion</label>
+          <input type="number" class="form-control" id="precio"
+            name="precio" #precio = 'ngModel' [(ngModel)] = "habitacionalModel.precio"
+          >
+        </div>
+        <div class="mb-3">
+          <label for="descripcion" class="form-label">Descripcion de la habitacion</label>
+          <input type="text" class="form-control" id="descripcion"
+            name="descripcion" #descripcion = 'ngModel' [(ngModel)] = "habitacionalModel.descripcion"
+          >
+        </div>
+        <button type="submit" class="bton btn btn-primary" (click)='agregarHabitaciones()'>Agregar Habitacion</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h1 class="subt">Servicios</h1>
+  <div class="row">
+    <div class="col">
+      <table class="t pieza table">
+        <tbody>
+          <br>
+          <tr *ngFor='let ser of servList'>
+            <td class="letra">
+              Nombre: {{ ser.nombre }} <br> Descripcion: {{ ser.descripcion }}
+              <br> Precio: {{ ser.precio }}<br>
+              <button type="submit" class="bton btn btn-primary">Editar</button>
+              <button type="submit" class="bton2 btn btn-primary">Eliminar</button>
+            </td>
+            <td>
+              <img src="/assets/img/servicio.jpg" class="hotel">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="piezas col">
+      <form class="formulario">
+        <h2>Agregar un servicio</h2>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre del servicio</label>
+          <input type="text" class="form-control" id="nombre"
+            name="nombre" #nombre = 'ngModel' [(ngModel)] = "servicioModel.nombre"
+          >
+        </div>
+        <div class="mb-3">
+          <label for="precio" class="form-label">Precio del Servicio</label>
+          <input type="number" class="form-control" id="precio"
+            name="precio" #precio = 'ngModel' [(ngModel)] = "servicioModel.precio"
+          >
+        </div>
+        <div class="mb-3">
+          <label for="descripcion" class="form-label">Descripcion del servicio</label>
+          <input type="text" class="form-control" id="descripcion"
+            name="descripcion" #descripcion = 'ngModel' [(ngModel)] = "servicioModel.descripcion"
+          >
+        </div>
+        <button type="submit" class="bton btn btn-primary" (click)='agregarServicio()'>Agregar Servicio</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="q container">
+  <h1 class="subt">Eventos</h1>
+  <div class="row">
+    <div class="col">
+      <table class="t table">
+        <tbody>
+          <br>
+          <tr *ngFor='let even of evenList'>
+            <td class="letra">
+              Nombre: {{ even.nombre }} <br> Tipo de evento: {{ even.tipoEvento }}
+              <br> Fecha del Evento: {{ even.fecha }}<br>
+              <button type="submit" class="bton btn btn-primary">Editar</button>
+              <button type="submit" class="bton2 btn btn-primary">Eliminar</button>
+            </td>
+            <td>
+              <img class="event" src="/assets/img/evento.jpg">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <form class="formulario">
+        <h2>Agregar un evento</h2>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre del evento</label>
+          <input type="text" class="form-control" id="nombre"
+            name="nombre" #nombre = 'ngModel' [(ngModel)] = "eventoModel.nombre"
+          >
+        </div>
+        <div class="mb-3">
+          <label for="tipoEvento" class="form-label">Tipo de evento</label>
+          <input type="text" class="form-control" id="tipoEvento"
+            name="tipoEvento" #tipoEvento = 'ngModel' [(ngModel)] = "eventoModel.tipoEvento"
+          >
+        </div>
+        <div class="mb-3">
+          <label for="fecha" class="form-label">Fecha del evento</label>
+          <input type="text" class="form-control" id="fecha"
+            name="fecha" #fecha = 'ngModel' [(ngModel)] = "eventoModel.fecha"
+          >
+        </div>
+        <button type="submit" class="bton btn btn-primary" (click)='agregarEvento()'>Agregar Evento</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+

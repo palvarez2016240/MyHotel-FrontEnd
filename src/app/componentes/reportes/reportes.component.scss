@@ -1,0 +1,33 @@
+*{
+  color:black;
+}
+
+.letra{
+font-size: large;
+}
+
+.t{
+  box-shadow: 0px 0px 6px 0px lightgray;
+  margin-left: 350px;
+  max-width: 500px;
+}
+
+.bton{
+  background-color: #efb810;
+  border: 0px;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-transform: uppercase;
+  color: white;
+}
+
+.bton:hover{
+  border-radius: 10px;
+  background: goldenrod;
+  color: white;
+}
+
+h2{
+  text-align: center;
+  padding: 30px;
+}

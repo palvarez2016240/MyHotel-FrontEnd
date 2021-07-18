@@ -1,0 +1,26 @@
+.bton{
+  background-color: #efb810;
+  margin-left: 100px;
+  border: 0px;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-transform: uppercase;
+  color: white;
+}
+
+.bton:hover{
+  border-radius: 10px;
+  background: goldenrod;
+  color: white;
+}
+
+.c{
+  padding-top: 125px;
+  max-width: 320px;
+  margin-left: -500px;
+}
+
+.rese{
+  margin-left: 200px;
+  padding-top: 125px;
+}

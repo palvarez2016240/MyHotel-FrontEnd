@@ -1,0 +1,99 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="row">
+    <div class="barra col">
+      <h1 class="subt">Habitaciones</h1>
+      <table class="t table">
+        <tbody>
+          <br>
+          <tr *ngFor='let hab of habList'>
+            <td class="letra">
+              Nombre: {{ hab.nombre }} <br> Descripcion: {{ hab.descripcion }}
+              <br> Precio: {{ hab.precio }} <br> Fecha Disponible: {{ hab.fechaDisponible }}
+              <br> Habitacion Disponible: {{ hab.disponible }}<br> Solicitudes: {{hab.reservaciones}}
+              <br>
+              <button type="submit" class="bton btn btn-primary" (click)='navegarReservacion(hab._id)'>Reservar</button>
+            </td>
+            <td>
+              <img src="/assets/img/habitacion.jpg" class="hotel">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="barra2 col">
+      <button type="submit" class="bton2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#servicios">Servicios del Hotel</button>
+      <br>
+      <button type="submit" class="bton3 btn btn-primary"  data-bs-toggle="modal" data-bs-target="#evento">Eventos del hotel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Servicsio-->
+<div class="modal fade" id="servicios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="mservicios modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Paquetes de Servicios</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <table class="t table">
+          <tbody>
+            <br>
+            <tr *ngFor='let ser of servList'>
+              <td class="letra">
+                Nombre: {{ ser.nombre }} <br> Descripcion: {{ ser.descripcion }}
+                <br> Precio: {{ ser.precio }}
+              </td>
+              <td>
+                <img src="/assets/img/servicio.jpg" class="hotel">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Evento-->
+<div class="modal fade" id="evento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="mservicios modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nuestros Eventos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <table class="t table">
+          <tbody>
+            <br>
+            <tr *ngFor='let even of evenList'>
+              <td class="letra">
+                Nombre: {{ even.nombre }} <br> Tipo de evento: {{ even.tipoEvento }}
+                <br> Fecha del evento: {{ even.fecha }}
+              </td>
+              <td>
+                <img class="event" src="/assets/img/evento.jpg">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+

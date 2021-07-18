@@ -1,0 +1,21 @@
+<br />
+<img src="/assets/img/Logo.png" class="logo">
+<form class="formulario">
+  <div class="mb-3">
+    <label for="email" class="form-label">Correo</label>
+    <input type="email" class="casilla form-control" id="email" aria-describedby="emailHelp"
+    name="correo" #correo='ngModel' [(ngModel)]="usuarioModel.correo">
+  </div>
+  <div class="mb-3">
+    <label for="contrasena" class="form-label">Contraseña</label>
+    <input type="password" class="casilla  form-control" id="password"
+    name="password" #password='ngModel'  [(ngModel)]='usuarioModel.password'>
+  </div>
+  <button type="submit" class="bton btn btn-primary" (click)='logins()'>Iniciar Sesion</button>
+</form>
+<div class="parrafo">
+  <p>No tengo una cuenta</p>
+  <a routerLink='/registro'>
+    Registrame
+  </a>
+</div>

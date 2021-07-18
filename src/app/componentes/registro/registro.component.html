@@ -1,0 +1,35 @@
+    <br/>
+    <img src="/assets/img/Logo.png" class="logo">
+    <form class="formulario">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre"
+          name="nombre" #nombre = 'ngModel' [(ngModel)] = 'usuarioModel.nombre'
+        >
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+          name="correo" #correo = 'ngModel' [(ngModel)] = 'usuarioModel.correo'
+        >
+      </div>
+      <div class="mb-3">
+        <label for="contrasena" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="pass"
+          name="password" #password = 'ngModel' [(ngModel)] = 'usuarioModel.password'
+        >
+      </div>
+      <div class="mb-3">
+        <label for="cel" class="form-label">Telefono</label>
+        <input type="text" class="form-control" id="cel"
+          name="Telefono" #telefono = 'ngModel' [(ngModel)] = 'usuarioModel.telefono'
+        >
+      </div>
+      <button type="submit" class="bton btn btn-primary" (click) = 'registrar()'>Registrarme</button>
+    </form>
+<div class="parrafo">
+  <p>Tengo una cuenta</p>
+  <a routerLink='/login'>
+    Iniciar Sesion
+  </a>
+</div>

@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+
+<div class="g container">
+  <img  src="/assets/img/Logo Slim.png" class="logo">
+    <div class="col-0 col-md-0">
+      <table class="t table">
+        <tbody>
+          <br>
+          <tr *ngFor="let hotl of hotelList">
+            <td class="letra">
+              Nombre: {{ hotl.nombre }}<br> Direccion: {{ hotl.direccion }}
+              <br> Calificaion: {{ hotl.calificacion }}/5<br> Descripcion: {{ hotl.descripcion }}
+              <br> Solicitudes: {{ hotl.solicitudes }}
+              <br>
+              <button type="submit" class="bton btn btn-primary" (click)='navegarHabitaciones(hotl._id)'>Ver</button>
+            </td>
+            <td>
+              <img src="/assets/img/hotel.jpg" class="hotel">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

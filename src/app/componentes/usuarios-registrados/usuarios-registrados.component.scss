@@ -1,0 +1,84 @@
+*{
+  color:black;
+}
+
+.letra{
+  font-size: medium;
+}
+
+.t{
+  box-shadow: 0px 0px 6px 0px lightgray;
+}
+
+.g{
+  margin-left: 350px;
+  max-width: 45%;
+  text-align: left;
+}
+
+.usuario{
+  width: 100px;
+ margin-left: 250px;
+}
+
+.bton2{
+  background-color: #efb810;
+  margin-left: 20px;
+  border: 0px;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-transform: uppercase;
+  color: white;
+}
+
+.bton{
+  background-color: #efb810;
+  margin-left: 150px;
+  border: 0px;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-transform: uppercase;
+  color: white;
+}
+
+.bton:hover{
+  border-radius: 10px;
+  background: goldenrod;
+  color: white;
+}
+
+.bton3{
+  background-color: #efb810;
+  margin-left: 250px;
+  border: 0px;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-transform: uppercase;
+  color: white;
+}
+
+.bton3:hover{
+  border-radius: 10px;
+  background: goldenrod;
+  color: white;
+}
+
+.bton2:hover{
+  border-radius: 10px;
+  background: goldenrod;
+  color: white;
+}
+
+h2{
+  color: rgb(2, 2, 80);
+  padding-left: 570px;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.d{
+  color: rgb(2, 2, 80);
+  padding-left: 450px;
+  padding-top: 100px;
+  padding-bottom: 30px;
+}

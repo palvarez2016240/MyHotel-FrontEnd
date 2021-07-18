@@ -1,0 +1,27 @@
+<app-navbar-hotel></app-navbar-hotel>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>Facturas Realizadas</h2>
+      <table class="t table">
+        <tbody>
+          <br>
+          <tr *ngFor='let res of factList'>
+            <td class="letra">
+              Cliente:  {{ res.cliente }}<br> Hotel:  {{ res.hotel }} <br> <br>Habitacion: {{ res.habitacion }}
+              <br> Precio Habitacion: Q.{{res.precioHabitacion}}.00 <br> <br> Servicios: {{ res.servicios }}
+              <br>
+              <br>
+              <br>
+              <br>
+            </td>
+            <td class="op">
+              Total:  Q.{{res.total}}.00
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

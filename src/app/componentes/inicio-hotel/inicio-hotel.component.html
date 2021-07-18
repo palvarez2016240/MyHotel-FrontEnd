@@ -1,0 +1,68 @@
+<app-navbar-hotel></app-navbar-hotel>
+
+<div class="g container">
+  <img  src="/assets/img/Logo Slim.png" class="logo">
+    <div class="col-0 col-md-0">
+      <table class="t table">
+        <tbody>
+          <br>
+          <tr *ngIf="hotelLista">
+            <td class="letra">
+              Nombre: {{ hotelLista.nombre }}<br> Direccion: {{ hotelLista.direccion }}
+              <br> Calificaion: {{ hotelLista.calificacion }}/5<br> Descripcion: {{ hotelLista.descripcion }}
+              <br> Solicitudes: {{ hotelLista.solicitudes }}
+              <br>
+              <button type="submit" class="bton btn btn-primary" (click)='navegarGestion(hotelLista._id)' >Gestionar</button>
+              <button type="submit" class="bton1 btn btn-primary" data-bs-toggle="modal" data-bs-target="#Editar">Editar Hotel</button>
+            </td>
+            <td>
+              <img src="/assets/img/hotel.jpg" class="hotel">
+            </td>
+
+            <!-- Modal -->
+<div class="modal fade" id="Editar" tabindex="-1" aria-labelledby="Editar" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar el Hotel</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form>
+          <div class="mb-3">
+            <label for="inputNombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="inputNombre" name="nombre" #nombre="ngModel"
+            [(ngModel)]="hotelLista.nombre">
+          </div>
+          <div class="mb-3">
+            <label for="inputCorreo" class="form-label">Direccion</label>
+            <input type="text" class="form-control" id="inputCorreo" name="direccion" #direccion="ngModel"
+            [(ngModel)]="hotelLista.direccion ">
+          </div>
+          <div class="mb-3">
+            <label for="inputTelefono" class="form-label">Calificacion</label>
+            <input type="text" class="form-control" id="inputTelefono" name="calificacion" #calificacion="ngModel"
+            [(ngModel)]="hotelLista.calificacion">
+          </div>
+          <div class="mb-3">
+            <label for="inputTelefono" class="form-label">Descripcion</label>
+            <input type="text" class="form-control" id="inputTelefono" name="descripcion" #descripcion="ngModel"
+            [(ngModel)]="hotelLista.descripcion">
+          </div>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)='editarHotel(otelLista._id)'>Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

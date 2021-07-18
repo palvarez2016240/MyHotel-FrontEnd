@@ -1,0 +1,99 @@
+.formulario{
+  color: #004466;
+  box-shadow: 0px 0px 6px 0px lightgray;
+  padding-left: 5px;
+  margin-left: 950px;
+  margin-right: 10px;
+  display: block;
+}
+
+.logo{
+  height: 75px;
+  margin-left: 38%;
+  margin-bottom: 50px;
+}
+
+.parrafo{
+  width: 160px;
+  margin-right: 30px;
+  margin-top: -80px;
+  float: right;
+  color: black;
+}
+
+.bton{
+  background-color: #efb810;
+  margin-left: 75px;
+  border: 0px;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-transform: uppercase;
+  color: white;
+}
+
+.bton:hover{
+  border-radius: 10px;
+  background: goldenrod;
+  color: white;
+}
+
+a{
+  text-decoration: none;
+}
+
+h2{
+  color: rgb(2, 2, 80);
+  padding-top: 50px;
+  padding-bottom: 30px;
+  width: 300px;
+  text-align: center;
+}
+
+
+
+.hotel{
+  width: 250px;
+}
+
+*{
+  color:black;
+}
+
+.letra{
+  font-size: medium;
+}
+
+.t{
+  box-shadow: 0px 0px 6px 0px lightgray;
+  margin-left: -100px;
+  max-width: 850px;
+  float: left;
+  margin-top: -600px;
+}
+
+.g{
+  margin-left: 125px;
+}
+
+.bton3{
+  background-color: #efb810;
+  margin-left: 200px;
+  border: 0px;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-transform: uppercase;
+  color: white;
+}
+
+.bton3:hover{
+  border-radius: 10px;
+  background: rgb(252, 49, 49);
+  color: white;
+}
+
+.encabezado{
+  color: rgb(2, 2, 80);
+  text-align: center;
+  margin-left: 250px;
+  margin-top: -20px;
+}

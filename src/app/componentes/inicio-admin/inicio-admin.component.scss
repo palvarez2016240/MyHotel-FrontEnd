@@ -1,0 +1,30 @@
+.logo{
+  width: 500px;
+}
+
+.c{
+  margin-top: 40px;
+}
+
+.usu{
+  width: 100px;
+}
+
+.bton{
+  background-color: #efb810;
+  margin-left: 90px;
+  border: 0px;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-transform: uppercase;
+}
+
+.bton:hover{
+  border-radius: 10px;
+  background: goldenrod;
+}
+
+.opciones{
+  margin-top: 100px;
+  margin-left: 140px;
+}

@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+
+<div class="col">
+  <h3 class="sub">Mi historial</h3>
+  <table class="tl table">
+    <thead>
+      <tr>
+        <th scope="col">Hotel</th>
+        <th scope="col">Fecha Llegada</th>
+        <th scope="col">Fecha Salida</th>
+        <th scope="col">Servicios</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = 'let hist of historialModel'>
+        <th>{{hist.hotel}}</th>
+        <th>{{hist.fechaLlegada}}</th>
+        <th>{{hist.fechaSalida}}</th>
+        <th>{{hist.servicios}}</th>
+        <!--<tr>
+          <th *ngFor = 'let serv of historialModel.servicios'>
+            {{serv.nombreServicio}}
+          </th>
+        </tr>--->
+    </tbody>
+  </table>
+</div>
+

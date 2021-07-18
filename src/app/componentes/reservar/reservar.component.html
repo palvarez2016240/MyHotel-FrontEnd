@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img src="/assets/img/reservacion.jpg" class="rese">
+    </div>
+    <div class="c col">
+      <form class="formulario">
+        <h2>Realizar mi reservacion</h2>
+        <div class="mb-3">
+          <label for="fechaLlegada" class="form-label">CHECK-IN</label>
+          <input type="text" class="form-control" id="fechaLlegada"
+            name="fechaLlegada" #fechaLlegada = 'ngModel' [(ngModel)] = "reservacionModel.fechaLlegada"
+          >
+        </div>
+        <div class="mb-3">
+          <label for="fechaSalida" class="form-label">CHECK-OUT</label>
+          <input type="text" class="form-control" id="fechaSalida"
+            name="fechaSalida" #fechaSalida = 'ngModel' [(ngModel)] = "reservacionModel.fechaSalida"
+          >
+        </div>
+        <button type="submit" class="bton btn btn-primary" (click)='reservar()'>Reservar</button>
+      </form>
+    </div>
+  </div>
+</div>

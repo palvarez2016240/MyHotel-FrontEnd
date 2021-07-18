@@ -1,0 +1,100 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img src="/assets/img/Usuario.png" class="usuario">
+      <div class="g container">
+        <div class="col-0 col-md-0">
+          <table class="t table">
+            <tbody>
+              <br>
+              <tr *ngIf='_usuarioService.obtenerIdentidad()'>
+                <td class="letra">
+                  <h3>Perfil</h3>
+                  <br>
+                  Nombre: {{_usuarioService.obtenerIdentidad().nombre}}
+                  <br> Correo: {{_usuarioService.obtenerIdentidad().correo}}
+                  <br> Telefono: {{_usuarioService.obtenerIdentidad().telefono}}
+                  <br>
+                  <button type="submit" class="bton btn btn-primary" (click)="opId(_usuarioService.obtenerIdentidad()._id)"
+                  data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button>
+                  <br>
+                  <button type="submit" class="bton3 btn btn-primary" routerLink='/login'>Cerrar Sesion</button>
+                  <br>
+                  <button type="submit" class="bton2 btn btn-primary" (click)="opId(_usuarioService.obtenerIdentidad()._id)"
+                  data-bs-toggle="modal" data-bs-target="#ModalEliminar">Eliminar</button>
+                  <br>
+                  <button type="submit" class="bton4 btn btn-primary" (click)="navegarHistorial(_usuarioService.obtenerIdentidad()._id)">Ver historial</button>
+                  <br>
+                  <button type="submit" class="bton5 btn btn-primary" (click)="navegarReservacion()">My Reservacion</button>
+                </td>
+                <td>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+    </div>
+
+    <div class="col">
+    </div>
+
+    <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Editar mi perfil</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div *ngIf='_usuarioService.obtenerIdentidad()' class="modal-body">
+
+            <form>
+              <div class="mb-3">
+                <label for="inputNombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="inputNombre" name="nombre" #nombre="ngModel"
+                [(ngModel)]="idUsuarioModel.nombre">
+              </div>
+              <div class="mb-3">
+                <label for="inputCorreo" class="form-label">Correo Electronico</label>
+                <input type="email" class="form-control" id="inputCorreo" name="correo" #correo="ngModel"
+                [(ngModel)]="idUsuarioModel.correo">
+              </div>
+              <div class="mb-3">
+                <label for="inputTelefono" class="form-label">Numero de telefono</label>
+                <input type="text" class="form-control" id="inputTelefono" name="telefono" #telefono="ngModel"
+                [(ngModel)]="idUsuarioModel.telefono">
+              </div>
+            </form>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" (click)="editarUsuario()" data-bs-dismiss="modal">Editar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalEliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Eliminar mi cuenta</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Estas seguro de eliminar tu cuenta? Se borraran todos los datos relacionados con tu cuenta.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="eliminarPerfil(idUsuarioModel._id)" data-bs-dismiss="modal">Si, eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>

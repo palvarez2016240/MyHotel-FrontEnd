@@ -1,0 +1,26 @@
+<app-navbar-hotel></app-navbar-hotel>
+
+<div class="container">
+  <div class="row">
+    <div class="c col">
+     <h2>Reservacion Realizadas</h2>
+      <table class="t table">
+        <tbody>
+          <br>
+          <tr *ngFor='let res of reservacionList'>
+            <td class="letra">
+              Cliente: {{ res.cliente }} <br> Habitacion: {{ res.habitacion }}
+              <br> CHECK-IN: {{ res.fechaLlegada }} <br> CHECK-OUT: {{ res.fechaSalida }}
+              <br> Servicios: {{ res.servicios }}<br> Reservacion facturada: {{res.facturada}}
+              <br>
+              <button type="submit" class="bton btn btn-primary" (click)='facturarReservaciones(res._id)'> Facturar</button>
+            </td>
+            <td>
+              <img src="/assets/img/reservacion.jpg" class="hotel">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
